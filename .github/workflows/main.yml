@@ -44,3 +44,5 @@ jobs:
 
             - name: Deploy Project Artifacts
               run: vercel deploy --prebuilt --token=${{ secrets.Priom2 }}
+
+              
