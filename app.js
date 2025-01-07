@@ -1,8 +1,7 @@
 import cors from 'cors';
 import express from 'express';
-
-const app = express();
-const port = process.env.PORT || 3000;
+const app = express(); 
+const port = process.env.PORT || 3000; 
 
 const corsOptions = {
     origin: '*',
@@ -22,3 +21,9 @@ app.get('/', (req, res) => {
 });
 
 export default app;
+
+if (import.meta.url === `file://${process.argv[1]}`) {
+    app.listen(port, () => {
+        console.log(`App running on http://localhost:${port}`);
+    });
+}
